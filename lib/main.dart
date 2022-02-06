@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_catalog/HomePage.dart';
+import 'package:movies_catalog/model/ProfilePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,14 +32,10 @@ class MenuWidget extends StatefulWidget {
 
 class _MenuWidgetState extends State<MenuWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static const List<Widget> _widgetOptions = <Widget>[
     MainPage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -54,6 +51,7 @@ class _MenuWidgetState extends State<MenuWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -68,7 +66,6 @@ class _MenuWidgetState extends State<MenuWidget> {
         selectedItemColor: Colors.white,
         onTap: _onItemTapped,
         backgroundColor: Colors.blue,
-        elevation: 2.0,
         showSelectedLabels: true,
         showUnselectedLabels: false,
       ),
