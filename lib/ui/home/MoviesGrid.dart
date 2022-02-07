@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:movies_catalog/model/MoviesModel.dart';
+import 'package:movies_catalog/ui/detail/DetailPage.dart';
 
 class MoviesGrid extends StatelessWidget {
   const MoviesGrid({Key? key, required this.gridCount, required this.data}) : super(key: key);
@@ -23,9 +24,9 @@ class MoviesGrid extends StatelessWidget {
           children: data.map<Widget>((movies) {
             return InkWell(
               onTap: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                //   return DetailScreen(place: place);
-                // }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DetailPage(movies: movies);
+                }));
               },
               child: Card(
                 child: Column(
