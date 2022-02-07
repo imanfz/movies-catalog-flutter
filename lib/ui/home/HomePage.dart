@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movies_catalog/model/MoviesModel.dart';
+import 'package:movies_catalog/ui/home/MoviesGrid.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -57,18 +59,42 @@ class _TabMenuWidgetState extends State<TabMenuWidget>
             Expanded(
               child: TabBarView(
                 controller: _tabController,
-                children: const <Widget>[
-                  Center(
-                    child: Text("Movies"),
+                children: [
+                  LayoutBuilder(
+                    builder: (BuildContext context,
+                        BoxConstraints constraints) {
+                      var gridCount = 0;
+                      if (constraints.maxWidth <= 600) {
+                        gridCount = 2;
+                      } else if (constraints.maxWidth <= 1200) {
+                        gridCount = 4;
+                      } else {
+                        gridCount = 6;
+                      }
+
+                      return MoviesGrid(gridCount: gridCount, data: moviesList);
+                    },
                   ),
-                  Center(
-                    child: Text("Tv Show"),
+                  LayoutBuilder(
+                    builder: (BuildContext context,
+                        BoxConstraints constraints) {
+                      var gridCount = 0;
+                      if (constraints.maxWidth <= 600) {
+                        gridCount = 2;
+                      } else if (constraints.maxWidth <= 1200) {
+                        gridCount = 4;
+                      } else {
+                        gridCount = 6;
+                      }
+
+                      return MoviesGrid(gridCount: gridCount, data: tvShowList);
+                    },
                   ),
                 ],
               ),
             ),
           ],
-        )
+        ),
       ),
     );
   }

@@ -25,7 +25,7 @@ enum Category {
   tvShow
 }
 
-var movieList = [
+var moviesList = [
   MoviesModel(
       title: "Alita: Battle Angel",
       release: "2019-12-02",
@@ -99,7 +99,7 @@ var movieList = [
   MoviesModel(
       title: "The Arrow",
       release: "1997-01-12",
-      imagePath: "asset/images/poster-arrow.jpg",
+      imagePath: "asset/images/poster_arrow.jpg",
       category: Category.movies,
       userScore: 6.3,
       genre: "Aksi, Cerita Fiksi, Petualangan",
@@ -162,7 +162,7 @@ var tvShowList = [
   MoviesModel(
       title: "Fairy Tail",
       release: "2009-10-12",
-      imagePath: "asset/images/poster_fairytail/jpg",
+      imagePath: "asset/images/poster_fairytail.jpg",
       category: Category.tvShow,
       userScore: 7.7,
       genre: "Aksi & Petualangan, Animasim Komedi, Sci-fi & Fantasy",
@@ -172,7 +172,7 @@ var tvShowList = [
   MoviesModel(
       title: "The Flash",
       release: "2014-10-07",
-      imagePath: "asset/images/",
+      imagePath: "asset/images/poster_flash.jpg",
       category: Category.tvShow,
       userScore: 7.7,
       genre: "Drama, Sci-fi & Fantasy",
