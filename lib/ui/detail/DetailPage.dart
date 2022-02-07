@@ -8,25 +8,6 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth > 800) {
-          return DetailMobilePage(movies: movies);
-        } else {
-          return DetailMobilePage(movies: movies);
-        }
-      },
-    );
-  }
-}
-
-class DetailMobilePage extends StatelessWidget {
-  final MoviesModel movies;
-
-  const DetailMobilePage({Key? key, required this.movies}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

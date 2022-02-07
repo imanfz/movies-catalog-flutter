@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:movies_catalog/model/MoviesModel.dart';
 import 'package:movies_catalog/ui/detail/DetailPage.dart';
